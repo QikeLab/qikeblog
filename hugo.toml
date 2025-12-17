@@ -2,37 +2,3 @@ baseURL = 'https://qikelab.github.io/'
 languageCode = 'zh-cn'
 title = 'Qike Blog'
 theme = 'ananke'
-
-
-enableRobotsTXT: true # 允许爬虫协议
-enableEmoji: true # 允许使用Emoji表情
-buildDrafts: false
-buildFuture: false
-buildExpired: false
-  
-
-params:
-  profileMode:
-    enabled: true
-    subtitle: "一些学习经验、知识分享、想法"
-    imageUrl: "/homepage.jpg" # optional
-    imageWidth: 150 # custom size
-    imageHeight: 150 # custom size
-    buttons:
-      - name: 点击开始
-        url: "/posts"
-  
-menu:
-  main:
-    - identifier: post
-      name: 文章
-      url: /posts/
-      weight: 10
-    - identifier: tags
-      name: 标签
-      url: /tags/
-      weight: 20
-    - identifier: about
-      name: 关于
-      url: /about/
-      weight: 30
