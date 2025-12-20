@@ -30,45 +30,45 @@ title = 'Hugo搭建个人博客并部署Github Pages实现自动化公网发布'
 
 ### 1. 安装hugo
 
-    winget install Hugo.Hugo.Extended
+winget install Hugo.Hugo.Extended
 
 ### 2. git的安装省略
 
 ### 3. 初始化hugo项目
 
-    ``` bash
-    hugo new site quickstart //文件夹名随喜
-    cd quickstart
-    git init
-    git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke //这里是拷贝ananke主题作为git子模块
-    echo "theme = 'ananke'" >> hugo.toml
-    hugo server
-    ```
+``` bash
+hugo new site quickstart //文件夹名随喜
+cd quickstart
+git init
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke //这里是拷贝ananke主题作为git子模块
+echo "theme = 'ananke'" >> hugo.toml
+hugo server
+```
 
 ### 4. 添加文章
 
-    ``hugo new content content/posts/my-first-post.md``
+``hugo new content content/posts/my-first-post.md``
 
-    创建的文章会在content/posts目录下生成，也可以自己手动创建
+创建的文章会在content/posts目录下生成，也可以自己手动创建
 
-    Note: **内容完成后，记得将draft字段修改为false。因为hugo默认不会构建草稿**
+Note: **内容完成后，记得将draft字段修改为false。因为hugo默认不会构建草稿**
 
 ### 5. 配置网址
 
-    在根目录的hugo.toml文件中，配置网址信息
+在根目录的hugo.toml文件中，配置网址信息
 
-    ``` toml
-    baseURL = 'https://example.org/'   //替换为'https://yourname.github.io/'，yourname必须和你的github账户名一致
-    languageCode = 'en-us'
-    title = 'My New Hugo Site'         //替换为你想要的网站名
-    theme = 'ananke'
-    ```
+``` toml
+baseURL = 'https://example.org/'   //替换为'https://yourname.github.io/'，yourname必须和你的github账户名一致
+languageCode = 'en-us'
+title = 'My New Hugo Site'         //替换为你想要的网站名
+theme = 'ananke'
+```
 
-    配置完成后，可以使用``hugo server -D``预览
+配置完成后，可以使用``hugo server -D``预览
 
 ### 6. 在Github创建yourname.github.io仓库
 
-    在github仓库的Settings > Pages中，将Source改为Github Actions
+在github仓库的Settings > Pages中，将Source改为Github Actions
 
 ### 7. 配置github pages和Actions实现自动化构建网页
 
@@ -185,11 +185,11 @@ title = 'Hugo搭建个人博客并部署Github Pages实现自动化公网发布'
             uses: actions/deploy-pages@v4
     ```
 
-    参考官网的配置：<https://gohugo.io/host-and-deploy/host-on-github-pages/>
+参考官网的配置：<https://gohugo.io/host-and-deploy/host-on-github-pages/>
 
 ### 8. 配置完成，持续输出文章并通过yourname.github.io访问
 
-    目前按照这个配置，只要在posts中增加内容，然后push到git仓库中，Github会自动将内容发布到<yourname.github.io>
+目前按照这个配置，只要在posts中增加内容，然后push到git仓库中，Github会自动将内容发布到<yourname.github.io>
 
 ### 9. 支持图片todo
 
